@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>雨夜-HTML5 canvas</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<style media="screen">
+           body {
+                overflow: hidden;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+<script src="http://api.html5media.info/1.1.8/html5media.min.js"></script> 
+        <script src="js/rainyday.min.js"></script>
+        <script>
+            function run() {
+                var image = document.getElementById('background');
+                image.onload = function() {
+                    var engine = new RainyDay({
+                        image: this
+                    });
+                    engine.rain([ [1, 2, 8000] ]);
+                    engine.rain([ [3, 3, 0.88], [5, 5, 0.9], [6, 2, 1] ], 100);
+                };
+                image.crossOrigin = 'anonymous';
+                image.src = 'img/N7ETzFO.jpg';
+                var bgm = document.getElementById('bgm');
+                bgm.src = 'http://www.rainymood.com/audio1110/0.m4a';
+
+
+            }
+ 
+        </script>
+      
+
+
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body onload="run();">
+
+
+	<div class="rain-container">
+
+		<header class="rain-header">
+			<h1>雨夜 - HTML5 canvas<span>Demo1</span></h1>
+			<div class="rain-links">
+				<a class="rain-icon icon-home" href="http://muguang.me/" title="暮光博客" target="_blank"><span> 暮光博客</span></a>
+				<a class="rain-icon icon-arrow-right3" href="http://muguang.me/tech/rain-html5-canvas.html" title="下载页" target="_blank"><span> 下载页</span></a>
+			</div>
+			<div class="rain-demo center">
+              <a href="index.html" class="current">DEMO1</a>
+              <a href="index2.html">DEMO2</a>
+         
+            </div>
+		</header>
+		
+	</div>
+	<img id="background" alt="background" src="" />
+<audio id="bgm" src="" autoplay=1></audio>  
+</body>
+
+</html>
